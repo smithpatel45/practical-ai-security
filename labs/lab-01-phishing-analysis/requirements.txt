@@ -1,0 +1,2 @@
+# Standard library only (Python 3.11+). No third-party packages are required.
+# Tests use pytest if available: python -m pytest

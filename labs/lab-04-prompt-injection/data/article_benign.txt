@@ -1,0 +1,1 @@
+Vector databases store embeddings, which are lists of numbers that capture meaning. They let applications find passages similar to a question. Access control still has to be enforced by the application. Many teams add metadata filters for that purpose.

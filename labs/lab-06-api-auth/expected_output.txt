@@ -1,0 +1,22 @@
+######## VULNERABLE API
+no key            -> 401
+alice chats       -> 200
+alice reads own   -> 200
+bob reads alice's -> 200 (LEAKED: Draft my salary negotiation email)
+admin reads it    -> 200
+bob tries revoke  -> 200
+bob sends 8 fast  -> [200, 200, 200, 200, 200, 200, 200, 200]
+stored key form   -> plaintext
+
+######## SECURE API
+no key            -> 401
+alice chats       -> 200
+alice reads own   -> 200
+bob reads alice's -> 404 
+admin reads it    -> 200
+bob tries revoke  -> 403
+bob sends 8 fast  -> [200, 200, 200, 429, 429, 429, 429, 429]
+stored key form   -> sha256 hash
+
+
+# Note: the number of 200s before 429 can vary by one on a very slow machine (token refill timing).

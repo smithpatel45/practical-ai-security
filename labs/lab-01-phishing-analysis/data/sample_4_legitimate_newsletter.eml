@@ -1,0 +1,23 @@
+From: "Northwind IT" <it-news@northwind.example>
+To: all-staff@northwind.example
+Subject: March IT newsletter: new laptop refresh schedule
+Date: Fri, 13 Mar 2026 09:00:00 +0000
+Message-ID: <d4@northwind.example>
+Authentication-Results: mx.northwind.example; spf=pass smtp.mailfrom=northwind.example; dkim=pass; dmarc=pass
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b2"
+
+--b2
+Content-Type: text/plain; charset="utf-8"
+
+Hello everyone, the laptop refresh schedule for Q2 is now on the intranet. No action is
+needed until your team's month arrives.
+
+--b2
+Content-Type: text/html; charset="utf-8"
+
+<p>Hello everyone,</p>
+<p>The laptop refresh schedule for Q2 is now on the
+<a href="https://intranet.northwind.example/it/refresh">intranet.northwind.example</a>.
+No action is needed until your team's month arrives.</p>
+--b2--

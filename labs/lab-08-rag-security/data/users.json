@@ -1,0 +1,5 @@
+[
+  {"name": "jo", "tenant": "acme", "groups": ["all-staff"]},
+  {"name": "hana", "tenant": "acme", "groups": ["all-staff", "hr"]},
+  {"name": "max", "tenant": "globex", "groups": ["all-staff"]}
+]

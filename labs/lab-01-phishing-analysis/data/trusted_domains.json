@@ -1,0 +1,5 @@
+{
+  "internal_domains": ["northwind.example"],
+  "trusted_domains": ["northwind.example", "contoso-supplies.example", "payroll-portal.example"],
+  "executives": ["Dana Whitfield", "Marcus Ong"]
+}

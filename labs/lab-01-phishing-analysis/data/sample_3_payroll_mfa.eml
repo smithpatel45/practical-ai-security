@@ -1,0 +1,24 @@
+From: "Payroll Portal" <no-reply@payroll-portal.example>
+To: priya.raman@northwind.example
+Subject: Action required: confirm your direct deposit for the March pay run
+Date: Thu, 12 Mar 2026 06:45:00 +0000
+Message-ID: <c3@payroll-portal.example>
+Authentication-Results: mx.northwind.example; spf=softfail smtp.mailfrom=payroll-portal.example; dkim=fail; dmarc=fail
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1"
+
+--b1
+Content-Type: text/plain; charset="utf-8"
+
+Hello Priya, our records show your direct deposit details need to be confirmed before the
+March pay run. Please sign in within 2 hours to avoid a delay to your salary.
+
+--b1
+Content-Type: text/html; charset="utf-8"
+
+<p>Hello Priya,</p>
+<p>Our records show your direct deposit details need to be confirmed before the March pay
+run. Please sign in within 2 hours to avoid a delay to your salary.</p>
+<p><a href="https://payroll-portal.example.account-check.example/login">payroll-portal.example</a></p>
+<p>You will be asked for your MFA code to complete verification.</p>
+--b1--

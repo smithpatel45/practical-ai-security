@@ -1,0 +1,4 @@
+{
+  "_comment": "Override generated scores by threat ID after your team reviews them. Example: refunds are capped at $50 by business rules, so the refund tool's impact is reduced.",
+  "T05": {"impact": 3}
+}

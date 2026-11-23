@@ -1,0 +1,14 @@
+[
+  {
+    "user_id": "alice",
+    "role": "analyst"
+  },
+  {
+    "user_id": "bob",
+    "role": "analyst"
+  },
+  {
+    "user_id": "ops-admin",
+    "role": "admin"
+  }
+]

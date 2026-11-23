@@ -1,0 +1,24 @@
+From: "Contoso Supplies Accounts" <accounts@contoso-suppiles.example>
+To: ap@northwind.example
+Subject: Updated bank details for invoice INV-20931
+Date: Wed, 11 Mar 2026 13:02:00 +0000
+Message-ID: <b2@contoso-suppiles.example>
+Authentication-Results: mx.northwind.example; spf=pass smtp.mailfrom=contoso-suppiles.example; dkim=none; dmarc=none
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Dear Accounts Payable team,
+
+As part of our annual audit, Contoso Supplies has moved its banking to a new provider.
+Please update our payment details on file before processing invoice INV-20931
+(USD 17,240.00, due 20 March).
+
+New account name: Contoso Supplies Ltd
+IBAN: XX00 EXAMPLE 0000 0000 0000 00
+
+Payments sent to the previous account after 15 March may be delayed. We appreciate your
+prompt attention and your continued partnership.
+
+Best regards,
+Elena Vargas
+Accounts Receivable, Contoso Supplies

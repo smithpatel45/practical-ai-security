@@ -1,0 +1,26 @@
+{
+  "trusted_channels": [
+    "company_phone",
+    "company_video_platform",
+    "payment_system",
+    "in_person"
+  ],
+  "sensitive_request_types": [
+    "payment",
+    "payment_detail_change",
+    "credential_reset",
+    "data_export",
+    "mfa_reset"
+  ],
+  "never_over_voice_or_video": [
+    "share_password",
+    "share_mfa_code"
+  ],
+  "never_rule_text": "Refuse: passwords and MFA codes are never shared over any channel, with anyone.",
+  "dual_approval_threshold": 10000,
+  "impersonation_prone_roles": [
+    "executive",
+    "it_admin",
+    "finance_leader"
+  ]
+}

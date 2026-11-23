@@ -1,0 +1,30 @@
+== sample_1_ceo_wire.eml  |  Confidential - Lisbon acquisition next step
+   score 19: LIKELY PHISHING / FRAUD
+   +2 SPF not passing: Authentication-Results shows spf did not pass
+   +2 DKIM not passing: Authentication-Results shows dkim did not pass
+   +2 DMARC not passing: Authentication-Results shows dmarc did not pass
+   +3 Lookalike sender domain: northwlnd.example resembles trusted northwind.example
+   +3 Executive name from external address: "Dana Whitfield" sent from northwlnd.example
+   +2 Reply-To differs from sender: replies go to example.net
+   +2 Pressure or secrecy language: before end of day, confidential, do not discuss, today
+   +3 Payment-detail change request: asks to change where money is sent
+
+== sample_2_vendor_bank_change.eml  |  Updated bank details for invoice INV-20931
+   score 10: LIKELY PHISHING / FRAUD
+   +2 DKIM not passing: Authentication-Results shows dkim did not pass
+   +2 DMARC not passing: Authentication-Results shows dmarc did not pass
+   +3 Lookalike sender domain: contoso-suppiles.example resembles trusted contoso-supplies.example
+   +3 Payment-detail change request: asks to change where money is sent
+
+== sample_3_payroll_mfa.eml  |  Action required: confirm your direct deposit for the March pay run
+   score 12: LIKELY PHISHING / FRAUD
+   +2 SPF not passing: Authentication-Results shows spf did not pass
+   +2 DKIM not passing: Authentication-Results shows dkim did not pass
+   +2 DMARC not passing: Authentication-Results shows dmarc did not pass
+   +3 Link text/target mismatch: shows "payroll-portal.example" but goes to payroll-portal.example.account-check.example
+   +1 Pressure or secrecy language: within 2 hours
+   +2 Credential request: asks you to sign in or provide a code
+
+== sample_4_legitimate_newsletter.eml  |  March IT newsletter: new laptop refresh schedule
+   score 0: NO STRONG INDICATORS
+

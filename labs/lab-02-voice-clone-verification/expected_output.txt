@@ -1,0 +1,39 @@
+== S1: Hypothetical: video call with 'CFO' and colleagues asks a finance clerk to make urgent confidential transfers
+   decision: VERIFY_FIRST
+   red flag: pressure to act quickly
+   red flag: asked to keep it secret or bypass normal process
+   red flag: request arrived on an unofficial channel (external_video_link)
+   red flag: new payee or changed payment details
+   step: Do not continue on this channel: contact the person through an official channel and report the contact to security.
+   step: Call back using the number in the company directory, not one given in the request.
+   step: Obtain a second approver through the payment system's normal workflow.
+
+== S2: Hypothetical: WhatsApp voice notes from 'CEO' ask an employee for help with a 'quick task'
+   decision: VERIFY_FIRST
+   red flag: pressure to act quickly
+   red flag: request arrived on an unofficial channel (whatsapp)
+   step: Do not continue on this channel: contact the person through an official channel and report the contact to security.
+
+== S3: Hypothetical: caller sounding like the IT director asks a help-desk agent to reset an executive's MFA
+   decision: VERIFY_FIRST
+   red flag: pressure to act quickly
+   red flag: call-back went to a number supplied by the requester
+   step: Call back using the number in the company directory, not one given in the request.
+
+== S4: Hypothetical: supplier's account manager phones to confirm a small routine payment to the existing account
+   decision: ALLOW
+   step: Call back using the number in the company directory, not one given in the request.
+   step: Verification completed: proceed and record the evidence.
+
+== S5: Hypothetical: 'grandson' calls crying from a police station, needs bail money by gift card
+   decision: VERIFY_FIRST
+   red flag: pressure to act quickly
+   red flag: asked to keep it secret or bypass normal process
+   red flag: request arrived on an unofficial channel (personal_phone)
+   step: Ask for the pre-agreed family code word, then hang up and call the person directly.
+
+== S6: Hypothetical: voice that sounds like a manager asks for your MFA code 'to fix your account'
+   decision: REFUSE
+   red flag: pressure to act quickly
+   step: Refuse: passwords and MFA codes are never shared over any channel, with anyone.
+

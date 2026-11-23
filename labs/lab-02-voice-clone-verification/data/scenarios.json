@@ -1,0 +1,64 @@
+[
+  {
+    "id": "S1",
+    "summary": "Hypothetical: video call with 'CFO' and colleagues asks a finance clerk to make urgent confidential transfers",
+    "channel": "external_video_link",
+    "request_type": "payment",
+    "amount": 250000,
+    "urgency": true,
+    "secrecy": true,
+    "new_payee_or_details": true,
+    "callback_done": false,
+    "claimed_role": "executive"
+  },
+  {
+    "id": "S2",
+    "summary": "Hypothetical: WhatsApp voice notes from 'CEO' ask an employee for help with a 'quick task'",
+    "channel": "whatsapp",
+    "request_type": "information",
+    "urgency": true,
+    "secrecy": false,
+    "callback_done": false,
+    "claimed_role": "executive"
+  },
+  {
+    "id": "S3",
+    "summary": "Hypothetical: caller sounding like the IT director asks a help-desk agent to reset an executive's MFA",
+    "channel": "company_phone",
+    "request_type": "mfa_reset",
+    "urgency": true,
+    "callback_done": true,
+    "callback_used_directory_number": false,
+    "caller_refused_callback": false,
+    "claimed_role": "it_admin"
+  },
+  {
+    "id": "S4",
+    "summary": "Hypothetical: supplier's account manager phones to confirm a small routine payment to the existing account",
+    "channel": "company_phone",
+    "request_type": "payment",
+    "amount": 1200,
+    "new_payee_or_details": false,
+    "callback_done": true,
+    "callback_used_directory_number": true,
+    "claimed_role": "supplier"
+  },
+  {
+    "id": "S5",
+    "summary": "Hypothetical: 'grandson' calls crying from a police station, needs bail money by gift card",
+    "channel": "personal_phone",
+    "request_type": "personal_payment",
+    "is_family_emergency": true,
+    "urgency": true,
+    "secrecy": true,
+    "claimed_role": "family"
+  },
+  {
+    "id": "S6",
+    "summary": "Hypothetical: voice that sounds like a manager asks for your MFA code 'to fix your account'",
+    "channel": "company_phone",
+    "request_type": "share_mfa_code",
+    "urgency": true,
+    "claimed_role": "manager"
+  }
+]

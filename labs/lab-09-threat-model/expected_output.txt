@@ -1,0 +1,17 @@
+# Threat model: HelpDesk Assistant (support chatbot with knowledge base and ticket actions)
+
+| ID | Threat | Target | STRIDE | OWASP | ATLAS | L | I | Risk | Mitigation |
+|---|---|---|---|---|---|---|---|---|---|
+| T02 | Indirect prompt injection via knowledge_base | assistant_llm | Elevation of privilege | LLM01:2026 | AML.T0051 | 4 | 4 | 16 High | Treat retrieved content as data; least privilege; tool policy outside the model |
+| T03 | Indirect prompt injection via inbound_email | assistant_llm | Elevation of privilege | LLM01:2026 | AML.T0051 | 4 | 4 | 16 High | Treat retrieved content as data; least privilege; tool policy outside the model |
+| T06 | Exfiltration through rendered output (images/links) | chat_widget | Information disclosure | LLM10:2026 | AML.T0077 | 4 | 4 | 16 High | Escape output; strip images; allowlist link hosts; CSP |
+| T01 | Direct prompt injection / jailbreak | assistant_llm | Tampering | LLM01:2026 | AML.T0051, AML.T0054 | 5 | 3 | 15 High | Limit model authority; output handling; monitoring |
+| T04 | Excessive agency: model can trigger ticket_tool | ticket_tool | Elevation of privilege | LLM03:2026 / ASI02 | AML.T0053 | 3 | 5 | 15 High | Allowlisted actions, argument validation, human approval |
+| T09 | RAG poisoning by users who can add content | knowledge_base | Tampering | LLM09:2026 | AML.T0070 | 3 | 4 | 12 Medium | Restrict writes; provenance; ingestion screening; review |
+| T05 | Excessive agency: model can trigger refund_tool | refund_tool | Elevation of privilege | LLM03:2026 / ASI02 | AML.T0053 | 3 | 3 | 9 Medium | Allowlisted actions, argument validation, human approval |
+| T08 | Cost exhaustion / denial of wallet | assistant_llm | Denial of service | LLM06:2026 | AML.T0034, AML.T0029 | 3 | 3 | 9 Medium | Per-user quotas, max tokens, budget alerts |
+| T10 | Actions by refund_tool cannot be attributed | refund_tool | Repudiation | n/a (control gap) | n/a | 3 | 3 | 9 Medium | Audit log every tool call with user, inputs, approval |
+| T11 | Sensitive data retained in logs | prompt_logs | Information disclosure | LLM02:2026 | n/a | 3 | 3 | 9 Medium | Redact; minimize; restrict access; retention limits |
+| T07 | System prompt / hidden context discovered | assistant_llm | Information disclosure | LLM08:2026 | AML.T0069 | 4 | 2 | 8 Medium | Assume discoverable; keep sensitive logic in code |
+
+Totals: 5 High, 6 Medium, 0 Low (11 threats). L = likelihood 1-5, I = impact 1-5, Risk = L x I.

@@ -1,0 +1,24 @@
+{
+  "name": "HelpDesk Assistant (support chatbot with knowledge base and ticket actions)",
+  "components": [
+    {"id": "customer", "type": "user"},
+    {"id": "chat_widget", "type": "ui", "renders_markdown": true},
+    {"id": "chat_api", "type": "api", "authenticated": true},
+    {"id": "assistant_llm", "type": "llm", "hosted_api": true, "hidden_context_has_secrets": false},
+    {"id": "knowledge_base", "type": "vector_store", "multi_tenant": false, "user_writable": true,
+     "untrusted_content": true},
+    {"id": "inbound_email", "type": "channel", "untrusted_content": true},
+    {"id": "ticket_tool", "type": "tool", "side_effects": true, "audit_logged": true},
+    {"id": "refund_tool", "type": "tool", "side_effects": true, "audit_logged": false},
+    {"id": "prompt_logs", "type": "logs", "stores_prompts": true},
+    {"id": "base_model", "type": "model_artifact", "from_public_hub": false}
+  ],
+  "flows": [
+    {"from": "customer", "to": "assistant_llm", "data": "chat messages"},
+    {"from": "knowledge_base", "to": "assistant_llm", "data": "retrieved articles"},
+    {"from": "inbound_email", "to": "assistant_llm", "data": "customer emails for summarization"},
+    {"from": "assistant_llm", "to": "ticket_tool", "data": "ticket updates"},
+    {"from": "assistant_llm", "to": "refund_tool", "data": "refund requests"},
+    {"from": "assistant_llm", "to": "chat_widget", "data": "answers"}
+  ]
+}
